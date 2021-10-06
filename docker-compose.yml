@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  monica-prm:
+    image: 3-apache
+    depends_on:
+      - monica-db
+    networks:
+      - monica
+      - web
+    volumes:
+      - monica-data:/var/www/html/storage
+    restart: unless-stopped
+    env_file:
+      - monica.env
+    labels:
+      - traefik.http.routers.monica.entryPoints=web-secure
+      - traefik.http.routers.monica.rule=Host(`monica.federation.home`)
+      - traefik.http.routers.monica.tls=true
+      - traefik.http.services.monica.loadbalancer.server.port=80
+
+  monica-db:
+    image: mysql:5
+    networks:
+      - monica
+    volumes:
+      - monica-db-data:/var/lib/mysql
+    restart: unless-stopped
+    env_file:
+      - mysql.env
+
+networks:
+  monica:
+  web:
+    external: true
+
+volumes:
+  monica-data:
+  monica-db-data:
