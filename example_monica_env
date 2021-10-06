@@ -1,3 +1,8 @@
+API_KEY=secret32charkeyxxxxxxxxxxxxxxxxx
+APP_URL=https://monica.federation.home/
+APP_FORCE_URL=true
+APP_TRUSTED_PROXIES=*
+
 DB_HOST=monica-db
 DB_USERNAME=monica
 DB_PASSWORD=secret

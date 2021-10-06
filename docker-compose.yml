@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   monica-prm:
-    image: 3-apache
+    image: monica:3-apache
     depends_on:
       - monica-db
     networks:
