@@ -1,8 +1,18 @@
 API_KEY=secret32charkeyxxxxxxxxxxxxxxxxx
 APP_URL=https://monica.federation.home/
 APP_FORCE_URL=true
-APP_TRUSTED_PROXIES=*
+APP_TRUST_PROXIES=*
 
 DB_HOST=monica-db
 DB_USERNAME=monica
 DB_PASSWORD=secret
+
+MAIL_MAILER=smtp
+MAIL_HOST=localhost
+MAIL_PORT=25
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS=no-reply@grabafed.org
+MAIL_FROM_NAME="Monica PRM"
+APP_EMAIL_NEW_USERS_NOTIFICATION=
